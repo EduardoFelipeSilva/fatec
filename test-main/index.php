@@ -1,2 +1,2 @@
 <?php
-require __DIR__ . '../resources/views/index.php';
+header('Location: ../resources/views/index.php');
