@@ -1,0 +1,188 @@
+body {
+  background-color: #f8f9fa;
+}
+.main-container {
+    height: 100vh; /* Ocupa a altura total da viewport */
+}
+.sidebar {
+  min-width: 200px;
+  background-color: #fff;
+  border-right: 1px solid #dee2e6;
+  padding-top: 20px;
+}
+.sidebar a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.sidebar a.active {
+  background-color: #6f42c1;
+  color: #fff;
+  border-radius: 8px;
+}
+.sidebar a:hover {
+  background-color: #6f42c1;
+  color: #fff;
+  border-radius: 8px;
+}
+.action-btn {
+  background-color: #6f42c1;
+  color: white;
+  width: 250px;
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease-in-out;
+}
+.action-btn:active {
+  transform: scale(0.95);
+}
+.action-icon {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+.text-center mb-4 {
+  cursor: pointer;
+}
+
+
+.cursor-pointer {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.cursor-pointer:hover {
+    opacity: 0.8; /* Dá um feedback visual ao passar o mouse */
+}
+
+
+
+
+/* --- Ajustes de Responsividade --- */
+
+/* No Desktop (telas maiores que 768px) */
+@media (min-width: 768px) {
+    .sidebar {
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+}
+
+/* --- Ajuste Geral da Sidebar --- */
+.sidebar {
+    min-width: 200px;
+    background-color: #fff;
+    border-right: 1px solid #dee2e6;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Ajustes para Mobile (Telas menores que 768px) --- */
+@media (max-width: 767.98px) {
+    .sidebar {
+        width: 100% !important;
+        min-width: 100% !important;
+        height: auto !important;
+        position: relative !important;
+        padding: 10px !important;
+        flex-direction: row !important; /* Muda de coluna para linha */
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        border-right: none;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    /* Esconde o título "Dashboard" no mobile para ganhar espaço, se quiser */
+    .sidebar h4 {
+        display: none;
+    }
+
+    /* Container dos Links */
+    .sidebar div:first-child {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: center;
+        flex: 1;
+    }
+
+    /* Ajuste dos Links Individuais */
+    .sidebar a {
+        padding: 8px 12px !important;
+        font-size: 13px !important;
+        display: flex;
+        align-items: center;
+        background: #f8f9fa;
+        border-radius: 6px;
+        margin: 2px !important;
+    }
+
+    .sidebar a.active {
+        background-color: #6f42c1;
+    }
+
+    /* Ajuste do Ícone dentro do link */
+    .action-icon {
+        margin-right: 5px !important;
+        font-size: 1.1rem !important;
+    }
+
+    /* Drop-up (Perfil) no Mobile */
+    .sidebar .trigger {
+        width: auto !important;
+        padding: 5px !important;
+        margin-left: 10px;
+    }
+
+    .sidebar .profile-trigger-area img {
+        width: 40px !important; /* Imagem menor no mobile */
+        margin-top: 0 !important;
+    }
+
+    .sidebar .profile-trigger-area p, 
+    .sidebar .profile-trigger-area small {
+        display: none; /* Esconde o nome "Marival" no mobile para caber tudo na linha */
+    }
+}
+
+/* No Desktop (telas maiores que 768px) */
+@media (min-width: 768px) {
+    .sidebar {
+        width: 250px; /* Largura fixa da sua sidebar */
+        height: 100vh;
+        position: fixed; /* Fixa ela na esquerda */
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    /* O conteúdo principal PRECISA desse recuo para não ficar por baixo */
+    .content {
+        margin-left: 250px; /* Deve ser IGUAL à largura da sidebar */
+        
+        min-height: 100vh;
+        padding: 2rem;
+    }
+}
+
+/* No Mobile (telas menores que 768px) */
+@media (max-width: 767.98px) {
+    .content {
+        margin-left: 0; /* Remove o recuo no mobile */
+        width: 100%;
+        padding: 1rem;
+    }
+    /* O resto do mobile você mantém como já tínhamos arrumado */
+}

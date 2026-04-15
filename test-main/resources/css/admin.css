@@ -1,0 +1,154 @@
+:root {
+
+    --sidebar-width: 250px;
+}
+
+/* --- Reset --- */
+body {
+    background-color: var(--bg-light-blue);
+    margin: 0;
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+/* --- RESOLUÇÃO DE CONFLITO --- */
+
+.dashboard-container {
+    display: flex !important; /* Força o comportamento lado a lado */
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Sidebar Ajustes */
+.sidebar {
+    width: 280px; 
+    min-width: 280px; /* Largura fixa no desktop */
+    background-color: #fff;
+    border-right: 1px solid #dee2e6;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+    /* Remova o position: sticky ou fixed se estiver causando sobreposição */
+    position: relative !important;
+}
+
+
+/* Estilos específicos para os cards da imagem */
+.admin-card {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+    height: 100%;
+    transition: box-shadow 0.3s;
+}
+
+.admin-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-header-blue {
+    background-color: #6f42c1;
+    color: white;
+    padding: 10px;
+    font-weight: 500;
+}
+
+.card-body-custom {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.admin-icon {
+    font-size: 80px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 25px;
+    min-height: 80px;
+    /* Alinha os botões */
+}
+
+.btn-outline-custom {
+    border: 1px solid #ccc;
+    color: #333;
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-outline-custom:hover {
+    background-color: #f8f9fa;
+    border-color: #999;
+}
+
+/* --- Estilos para Telas Grandes (Desktop) --- */
+.content-area {
+    flex-grow: 1; /* Faz o conteúdo ocupar todo o espaço restante */
+    background-color: #f8f9fa;
+    padding: 40px;
+    min-width: 0; /* Importante para o flexbox não quebrar com tabelas ou grids */
+}
+
+/* --- RESPONSIVIDADE (Ajustes via @media) --- */
+
+/* Para tablets e celulares (telas menores que 992px) */
+@media (max-width: 992px) {
+    .dashboard-container {
+        flex-direction: column; /* Sidebar vai para cima, conteúdo para baixo */
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #dee2e6;
+        padding: 15px;
+        display: block; /* Volta para block no mobile para os links empilharem ou use flex-row se preferir */
+    }
+
+    /* Ajuste dos links da sidebar no mobile */
+    .sidebar a {
+        padding: 8px 12px;
+        margin: 0 !important;
+        font-size: 14px;
+    }
+
+    .sidebar h4 {
+        width: 100%; /* Mantém o título no topo sozinho */
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .content-area {
+        padding: 20px;
+        margin-left: 0 !important; /* Força a remoção de margens no mobile */
+    }
+}
+
+/* Ajuste específico para os Cards (Mobile) */
+@media (max-width: 768px) {
+    .admin-card {
+        margin-bottom: 20px; /* Espaço entre cards quando empilhados */
+    }
+
+    .admin-icon {
+        font-size: 60px; /* Reduz um pouco o ícone em telas muito pequenas */
+    }
+
+    /* Garante que o container de botões não quebre o layout */
+    .card-description {
+        min-height: auto; 
+    }
+}

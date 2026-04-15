@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #5A67D8;
+    --secondary-color: #F6AD55;
+    --background-color: #EDF2F7;
+    --card-background: #FFFFFF;
+    --text-color-primary: #1A202C;
+    --text-color-secondary: #4A5568;
+    --border-color: #CBD5E0;
+    --form-field-background: #EBF8FF;
+    --btn-submit-bg: #F6AD55;
+    --btn-submit-hover-bg: #DD6B20;
+    --sidebar-bg: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+  background-color: #f8f9fa;
+}
+.main-container {
+    height: 100vh; /* Ocupa a altura total da viewport */
+}
+.sidebar {
+    /* min-width: 200px; */
+    background-color: var(--sidebar-bg);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border-color);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+}
+.sidebar a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.sidebar a.active {
+  background-color: #6f42c1;
+  color: #fff;
+  border-radius: 8px;
+}
+.sidebar a:hover {
+  background-color: #6f42c1;
+  color: #fff;
+  border-radius: 8px;
+}
+.action-btn {
+  background-color: #6f42c1;
+  color: white;
+  width: 200px;
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease-in-out;
+}
+.action-btn:active {
+  transform: scale(0.95);
+}
+.action-icon {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+/* --- Ajustes de Responsividade --- */
+
+/* No Desktop (telas maiores que 768px) */
+@media (min-width: 768px) {
+    .sidebar {
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+}
+
+/* No Mobile (telas menores que 768px) */
+@media (max-width: 767.98px) {
+    .sidebar {
+        min-width: 100%;
+        height: auto;
+        padding: 1rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .main-content {
+        height: auto !important; /* Permite rolar a tela se houver muitos botões */
+        padding: 40px 0;
+    }
+
+    .action-btn {
+        width: 90%; /* Botões ocupam quase toda a largura no celular */
+        max-width: 300px;
+    }
+    
+    /* Faz os links da sidebar ficarem em linha ou grade no mobile se preferir */
+    .sidebar div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: center;
+    }
+    
+    .sidebar a {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+}
+
+

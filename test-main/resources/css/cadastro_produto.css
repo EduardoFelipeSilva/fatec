@@ -1,0 +1,240 @@
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #5A67D8;
+    --secondary-color: #F6AD55;
+    --background-color: #EDF2F7;
+    --card-background: #FFFFFF;
+    --text-color-primary: #1A202C;
+    --text-color-secondary: #4A5568;
+    --border-color: #CBD5E0;
+    --form-field-background: #EBF8FF;
+    --btn-submit-bg: #F6AD55;
+    --btn-submit-hover-bg: #DD6B20;
+    --sidebar-bg: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    /* padding: 0; */
+}
+
+body {
+    /* font-family: 'Roboto', sans-serif; */
+    background-color: var(--background-color);
+    color: var(--text-color-primary);
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* Sidebar Ajustes */
+.sidebar {
+    width: 270px; /* Largura fixa para a sidebar */
+    min-width: 300px;
+    background-color: #fff;
+    border-right: 1px solid #dee2e6;
+    padding-top: 20px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 10px 15px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+}
+
+.content {
+    flex-grow: 1;
+    padding: 2rem;
+}
+
+.page-header {
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color-primary);
+}
+
+.page-header p {
+    color: var(--text-color-secondary);
+    margin-top: 0.5rem;
+}
+
+.form-container {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.form-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    flex: none;
+    width: 100%;
+}
+
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-color-primary);
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: var(--form-field-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-color-primary);
+    transition: border-color 0.2s;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-color-secondary);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--btn-submit-bg);
+    color: var(--card-background);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.form-actions {
+    padding: 1rem;
+}
+
+.btn-submit:hover {
+    background-color: var(--btn-submit-hover-bg);
+}
+
+
+/* --- Responsividade do Cadastro --- */
+
+/* Ajuste para telas menores que 768px (Tablets e Celulares) */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column; /* Empilha a navbar e o conteúdo */
+    }
+
+    .content {
+        padding: 1rem; /* Diminui o espaçamento lateral no celular */
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem; /* Título menor para caber na tela */
+    }
+
+    .form-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .form-row {
+        flex-direction: column; /* O SEGREDO: transforma lado a lado em um abaixo do outro */
+        gap: 1rem; /* Espaçamento entre os campos empilhados */
+        margin-bottom: 1rem;
+    }
+
+    .form-group {
+        width: 100%; /* Garante que o input ocupe a largura total */
+    }
+
+    .btn-submit {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+}
+
+/* Ajuste específico para Desktop para não perder o layout original */
+@media (min-width: 769px) {
+    .content {
+        /* Garante que o conteúdo não fique "colado" na lateral da sidebar fixa */
+        margin-left: auto; 
+    }
+}
+
+/* No Desktop (telas maiores que 768px) */
+@media (min-width: 768px) {
+    .sidebar {
+        width: 250px; /* Largura fixa da sua sidebar */
+        height: 100vh;
+        position: fixed; /* Fixa ela na esquerda */
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    /* O conteúdo principal PRECISA desse recuo para não ficar por baixo */
+    .content {
+        width: calc(100% - 250px); /* Ocupa o restante da tela */
+
+    }
+}
+
+/* No Mobile (telas menores que 768px) */
+@media (max-width: 767.98px) {
+    .content {
+        margin-left: 0; /* Remove o recuo no mobile */
+        width: 100%;
+        padding: 1rem;
+    }
+    /* O resto do mobile você mantém como já tínhamos arrumado */
+}

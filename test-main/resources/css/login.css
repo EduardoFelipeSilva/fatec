@@ -1,0 +1,100 @@
+body {
+  background: linear-gradient(135deg, #6f42c1, #b07dff);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #6f42c1;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="date"]:focus {
+  border-color: #6f42c1;
+  box-shadow: 0 0 5px rgba(111, 66, 193, 0.5);
+  outline: none;
+}
+
+button {
+  background: #6f42c1;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #5a35a5;
+  transform: scale(1.05);
+}
+
+#btn-toggle-cadastro {
+  background: #ccc;
+  color: #333;
+}
+
+#btn-toggle-cadastro:hover {
+  background: #bbb;
+}
+
+.mensagem {
+  margin-top: 15px;
+  color: #333;
+  font-weight: bold;
+  animation: fadeIn 0.5s;
+}
+
+.form-section {
+  transition: all 0.5s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,184 @@
+/* Layout Global */
+.main-wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Sidebar Ajustes */
+.sidebar {
+    width: 300px; /* Largura fixa para a sidebar */
+    min-width: 300px;
+    background-color: #fff;
+    border-right: 1px solid #dee2e6;
+    padding-top: 20px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 10px 15px;
+}
+
+/* Área do Conteúdo (onde fica o perfil) */
+.content-area {
+    flex-grow: 1; /* Ocupa o resto do espaço */
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Ajuste no Input Group para não conflitar com classes do Bootstrap */
+.input-group-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-group-custom label {
+    font-weight: 500;
+    color: #555;
+}
+
+.input-group-custom input {
+    border: none;
+    border-bottom: 1px solid #eee;
+    text-align: right;
+    padding: 5px;
+    outline: none;
+    width: 60%;
+}
+
+.input-group-custom input:focus {
+    border-bottom: 2px solid #6f42c1;
+}
+
+
+
+
+
+
+
+
+
+.profile-card {
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+}
+
+/* Header Estilo */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.avatar-wrapper {
+    position: relative;
+}
+
+.avatar-wrapper img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #eee;
+}
+
+.edit-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-info h2 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.header-info p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    font-size: 0.95rem;
+    color: #444;
+    flex: 1;
+}
+
+.input-group input, .input-group textarea {
+    flex: 1.5;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid transparent;
+    text-align: right;
+    color: #666;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+    border-bottom-color: #6f42c1;
+    color: #000;
+}
+
+.save-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #6622e4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.save-btn:hover {
+    background-color: #5900ff;
+}
