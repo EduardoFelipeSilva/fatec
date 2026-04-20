@@ -148,7 +148,7 @@ textarea {
 .btn-submit {
     width: 100%;
     padding: 1rem;
-    background-color: var(--btn-submit-bg);
+    background-color:black;
     color: var(--card-background);
     border: none;
     border-radius: 8px;
@@ -163,7 +163,9 @@ textarea {
 }
 
 .btn-submit:hover {
-    background-color: var(--btn-submit-hover-bg);
+    opacity: 0.9;
+
+    transition: all 0.3s ease;
 }
 
 

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard de Vendas</title>
-    <!-- Bootstrap CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-     <!-- Bootstrap Icons -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/venda.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -61,72 +61,97 @@
                 </div>
                 
                 <div class="table-responsive-wrapper">
-                    <table class="sales-table">
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Tipo</th>
-                                <th>Custo</th>
-                                <th>Valor</th>
-                                <th>Total</th>
-                                <th>Opções</th>
-                                <?php
-// Simulação de dados de vendas que viriam de um banco de dados
-function getVendas() {
-    return [
-        ['nome' => 'Coca Cola', 'tipo' => 'Bebida', 'custo' => '5,70', 'valor' => '9,00', 'total' => '3,30'],
-        ['nome' => 'Cozinha', 'tipo' => 'Comida', 'custo' => '2,50', 'valor' => '6,50', 'total' => '4,50'],
-        ['nome' => 'Salgadinho', 'tipo' => 'Doce',  'custo' => '1,20', 'valor' => '2,20', 'total' => '1,00'],
-        ['nome' => 'Hamburguer', 'tipo' => 'Comida',  'custo' => '5,50', 'valor' => '8,50', 'total' => '3,50'],
-        ['nome' => 'Bolacha', 'tipo' => 'Doce', 'custo' => '1,50', 'valor' => '3,00', 'total' => '1,50'],
-        ['nome' => 'Frios', 'tipo' => 'Comida',  'custo' => '1,50', 'valor' => '2,50', 'total' => '1,00'],
-        ['nome' => 'Bolo', 'tipo' => 'Doce',  'custo' => '2,50', 'valor' => '3,50', 'total' => '1,00'],
-        ['nome' => 'Bala', 'tipo' => 'Doce', 'custo' => '0,10', 'valor' => '0,25', 'total' => '0,10'],
-    ];
-}
+    <table class="sales-table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Custo</th>
+                <th>Valor</th>
+                <th>Total</th>
+                <th>Opções</th>
+            </tr>
+        </thead>
 
-// O código abaixo seria colocado diretamente no <tbody> da sua tabela HTML
-$vendas = getVendas();
-foreach ($vendas as $venda) {
-    echo "<tr>";
-    echo "<td>" . htmlspecialchars($venda['nome']) . "</td>";
-    echo "<td>" . htmlspecialchars($venda['tipo']) . "</td>";
-    echo "<td>" . htmlspecialchars($venda['custo']) . "</td>";
-    echo "<td>" . htmlspecialchars($venda['valor']) . "</td>";
-    echo "<td>" . htmlspecialchars($venda['total']) . "</td>";
-    echo "</tr>";
-}
-?>
-                        </tr>
-                    </thead>
-                    <tbody id="sales-data">
-                        </tbody>
-                </table>
-                
-                <div class="table-footer">
-                    <div class="pagination-info">
-                        Mostrando Página 1 de 8
-                    </div>
-                    <div class="pagination-controls">
-                        <a href="#" class="page-link disabled">
-                            <span class="material-icons">chevron_left</span>
+        <tbody id="sales-data">
+            
+            <tr>
+                <td>Coca Cola</td>
+                <td>Bebida</td>
+                <td>R$ 5,70</td>
+                <td>R$ 9,00</td>
+                <td>R$ 3,30</td>
+                <td>
+                    <div class="action-buttons">
+                        <a href="atualizar_Produto.php" title="Atualizar" class="icon-action">
+                            <i class="bi bi-pencil-square"></i>
                         </a>
-                        <a href="#" class="page-link active">1</a>
-                        <a href="#" class="page-link">2</a>
-                        <a href="#" class="page-link">3</a>
-                        <a href="#" class="page-link">4</a>
-                        <a href="#" class="page-link">...</a>
-                        <a href="#" class="page-link">40</a>
-                        <a href="#" class="page-link">
-                            <span class="material-icons">chevron_right</span>
+                        <a href="#" title="Excluir" class="icon-action delete" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="bi bi-trash"></i>
                         </a>
                     </div>
-                </table>
-                </div>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Hamburguer</td>
+                <td>Comida</td>
+                <td>R$ 5,50</td>
+                <td>R$ 8,50</td>
+                <td>R$ 3,00</td>
+                <td>
+                    <div class="action-buttons">
+                        <a href="atualizar_Produto.php" title="Atualizar" class="icon-action">
+                            <i class="bi bi-pencil-square"></i>
+                        </a>
+                        <a href="#" title="Excluir" class="icon-action delete" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="bi bi-trash"></i>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="table-footer">
+        <div class="pagination-info">
+            Mostrando Página 1 de 1
+        </div>
+        <div class="pagination-controls">
+            <a href="#" class="page-link disabled">
+                <span class="material-icons">chevron_left</span>
+            </a>
+            <a href="#" class="page-link active">1</a>
+            <a href="#" class="page-link">
+                <span class="material-icons">chevron_right</span>
+            </a>
+        </div>
+    </div>
+</div>
+
             </section>
         </main>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Produto</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Tem certeza que deseja excluir este produto?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-danger">Excluir</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

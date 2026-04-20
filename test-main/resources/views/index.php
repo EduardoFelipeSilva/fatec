@@ -20,9 +20,12 @@
         <!-- Main Content -->
         <main class="col-12 col-md-12 d-flex flex-column align-items-center justify-content-center main-content" style="height: 100vh;">
             
-            <a href="cadastroProduto.php" class="active"><button class="action-btn">
-                <i class="bi bi-person-plus action-icon"></i>Cadastro
-            </button></a>
+<a href="cadastroProduto.php" class="btn-link active">
+    <button class="action-btn">
+        <i class="bi bi-person-plus action-icon"></i>
+<span>Cadastro</span>
+    </button>
+</a>
             <a href="vendas.php"><button class="action-btn">
                 <i class="bi bi-bookmark action-icon"></i> Consultar
             </button></a>

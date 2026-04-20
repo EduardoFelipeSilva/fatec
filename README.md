@@ -13,6 +13,7 @@
 <p align="center">
     <b>ZenEstoque</b> é um sistema web integrado para gerenciamento de estoques e visualização de dados gerenciais, focado na redução de desperdícios.
 </p>
+Link da prototipação: (https://www.figma.com/design/KXQOthT1VJ7MJtVzWpTMSF/CRM-Dashboard-Customers-List--Community-?node-id=0-1&p=f&t=wkuFL7zdl30CQow1-0)
 
 ---
 

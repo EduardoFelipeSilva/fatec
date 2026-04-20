@@ -22,6 +22,8 @@
 body {
   background-color: #f8f9fa;
 }
+
+
 .main-container {
     height: 100vh; /* Ocupa a altura total da viewport */
 }
@@ -52,25 +54,29 @@ body {
   border-radius: 8px;
 }
 .action-btn {
-  background-color: #6f42c1;
-  color: white;
-  width: 200px;
-  height: 60px;
-  border: none;
-  border-radius: 10px;
-  font-size: 18px;
-  margin: 10px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.1s ease-in-out;
+    background-color: #6f42c1;
+    color: white;
+    width: 220px;
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    margin: 10px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    cursor: pointer;
 }
 .action-btn:active {
   transform: scale(0.95);
 }
 .action-icon {
-  margin-right: 10px;
-  font-size: 1.5rem;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
 }
 
 /* --- Ajustes de Responsividade --- */
