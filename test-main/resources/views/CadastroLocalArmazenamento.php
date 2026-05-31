@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Produtos</title>
+    <title>Cadastro de Local</title>
+    <link rel="icon" href="../../logo/logo.png" type="image/png">
     <link rel="stylesheet" href="../cadastro_produto/style_cadastr.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -27,31 +29,49 @@
             <main class="content col-12 col-md-10">
 
                 <div class="page-header">
-                    <h1>Cadastro de Locais de Armazenamento</h1>
-                    <p>Preencha o formulário abaixo para cadastrar o local de armazenamento!</p>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <a href="javascript:history.back()" 
+                        class="btn text-white d-inline-flex align-items-center justify-content-center cursor-pointer" 
+                        style="width: 40px; height: 40px; border-radius: 50%; background-color: #6f42c1; border: none; transition: background-color 0.2s;"
+                        onmouseover="this.style.backgroundColor='#5a32a3'"
+                        onmouseout="this.style.backgroundColor='#6f42c1'">
+                            <i class="bi bi-arrow-left" style="font-size: 1.25rem; line-height: 1;"></i>
+                        </a>
+                        <h1 class="m-0">Cadastro de Local</h1>
+                    </div>
+                    <p class="text-muted m-0" style="padding-left: 52px;">Preencha o formulário abaixo para cadastrar o local de armazenamento!</p>
                 </div>
 
-                <form action="../../app/Controller/cadastros/cadastro_local_armazenamento.php" method="POST" class="form-container">
+            <?php if(isset($_GET['sucesso'])) { ?>
+                <div class="alert alert-success">
+                    Local de armazenamento cadastrado com sucesso!
+                </div>
+                    <?php } ?>
+
+                    <?php if(isset($_GET['erro'])) { ?>
+                        <div class="alert alert-danger">
+                            Erro ao cadastrar local de armazenamento.
+                        </div>
+            <?php } ?>
+
+                <form action="../Controller/controllerArmazenamento.php" method="POST" class="form-container">
+                    <input type="hidden" name="acao" value="Salvar">
                     <div class="form-section">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="nome">Nome</label>
-                                <input type="text" id="nome" name="nome" placeholder="Nome do Local de Armazenamento">
+                                <input type="text" id="nome" name="nome" placeholder="Nome do Local ">
                             </div>
                             <div class="form-group">
                                 <label for="local">Local</label>
-                                <input type="text" id="local" name="local" placeholder="Local do Local de Armazenamento">
+                                <input type="text" id="local" name="local" placeholder="Endereço do Local ">
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="capacidade">Capacidade</label>
-                                <input type="number" id="capacidade" name="capacidade" placeholder="Capacidade do Local de Armazenamento" step="0.01">
-                            </div>
-                            <div class="form-group">
-                                <label for="id_Status">Status</label>
-                                <input type="number" id="id_Status" name="id_Status" placeholder="Status do Local de Armazenamento" step="0.01">
+                                <input type="number" id="capacidade" name="capacidade" placeholder="Capacidade de Armazenamento" step="0.01">
                             </div>
                         </div>
 

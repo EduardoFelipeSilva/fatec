@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
     const cadastroForm = document.getElementById('cadastroForm');
 
-    // Função para mostrar o formulário de cadastro
     btnToggleCadastro.addEventListener('click', () => {
         loginSection.classList.add('hidden');
         cadastroSection.classList.remove('hidden');
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mensagemDiv.textContent = '';
     });
 
-    // Função para mostrar o formulário de login
     btnVoltar.addEventListener('click', () => {
         cadastroSection.classList.add('hidden');
         loginSection.classList.remove('hidden');
@@ -25,39 +23,102 @@ document.addEventListener('DOMContentLoaded', () => {
         mensagemDiv.textContent = '';
     });
 
-    // Lógica de simulação de login (substitua pelo seu PHP)
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = document.getElementById('emailLogin').value;
-        const senha = document.getElementById('senhaLogin').value;
 
-        // Simulação de validação
-        if (email === "admin@teste.com" && senha === "123456") {
-            mensagemDiv.textContent = "Login realizado com sucesso!";
-            mensagemDiv.style.color = 'green';
+    loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('emailLogin').value;
+    const senha = document.getElementById('senhaLogin').value;
+
+    try {
+        const resposta = await fetch('../controller/controllerUsuario.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams({
+                acao: 'Login',
+                email: email,
+                senha: senha
+            })
+        });
+
+        const resultado = await resposta.text();
+
+        if (resultado.includes("sucesso")) {
+            window.location.href = "index.php";
         } else {
-            mensagemDiv.textContent = "Usuário ou senha incorretos!";
+            mensagemDiv.innerHTML = resultado;
             mensagemDiv.style.color = 'red';
         }
-    });
 
-    // Lógica de simulação de cadastro (substitua pelo seu PHP)
-    cadastroForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const nome = document.getElementById('nomeCadastro').value;
-        const cpf = document.getElementById('cpfCadastro').value;
-        const dataNascimento = document.getElementById('dataNascimentoCadastro').value;
-        const email = document.getElementById('emailCadastro').value;
-        const senha = document.getElementById('senhaCadastro').value;
-        const confirmaSenha = document.getElementById('confirmaSenhaCadastro').value;
+    } catch (erro) {
+        mensagemDiv.textContent = "Erro ao tentar fazer login!";
+        mensagemDiv.style.color = 'red';
+        console.error(erro);
+    }
+});
 
-        if (senha !== confirmaSenha) {
-            mensagemDiv.textContent = "As senhas não coincidem!";
-            mensagemDiv.style.color = 'red';
-        } else {
-            // Simulação de cadastro
-            mensagemDiv.textContent = `Cadastro realizado com sucesso para ${nome}!`;
-            mensagemDiv.style.color = 'green';
-        }
-    });
+cadastroForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const nome = document.getElementById('nome').value;
+    const cpf = document.getElementById('cpf').value;
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('senha').value;
+    const telefone = document.getElementById('telefone').value;
+    const endereco = document.getElementById('endereco').value;
+    const cargo = document.getElementById('cargo').value;
+    const foto = document.getElementById('foto').value;
+
+
+    try {
+
+        const resposta = await fetch('../controller/controllerUsuario.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams({
+                acao: 'Salvar',
+                nome: nome,
+                cpf: cpf,
+                email: email,
+                senha: senha,
+                telefone: telefone,
+                endereco: endereco,
+                cargo: cargo,
+                foto: foto,
+            })
+        });
+
+        const resultado = await resposta.text();
+
+if (resultado.includes("sucesso")) {
+
+    mensagemDiv.innerHTML = "Cadastro realizado com sucesso! <br> Aguarde Liberação do Administrador.";
+    mensagemDiv.style.color = 'green';
+    cadastroSection.classList.add('hidden');
+    loginSection.classList.remove('hidden');
+    formTitulo.textContent = 'Login / Cadastro';
+    cadastroForm.reset();
+
+} else {
+
+    mensagemDiv.innerHTML = resultado;
+    mensagemDiv.style.color = 'red';
+
+}
+
+    } catch (erro) {
+        mensagemDiv.textContent = "Erro ao cadastrar!";
+        mensagemDiv.style.color = 'red';
+
+        console.error(erro);
+    }
+
+    const resultado = await resposta.text();
+
+});
+
 });

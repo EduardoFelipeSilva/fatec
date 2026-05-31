@@ -1,8 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="icon" href="../../logo/logo.png" type="image/png">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,19 +23,16 @@
         <!-- Main Content -->
         <main class="col-12 col-md-12 d-flex flex-column align-items-center justify-content-center main-content" style="height: 100vh;">
             
-<a href="cadastroProduto.php" class="btn-link active">
-    <button class="action-btn">
-        <i class="bi bi-person-plus action-icon"></i>
-<span>Cadastro</span>
-    </button>
-</a>
+            <a href="cadastroProduto.php" class="active"><button class="action-btn">
+                <i class="bi bi-person-plus action-icon"></i>Cadastro
+            </button></a>
             <a href="vendas.php"><button class="action-btn">
                 <i class="bi bi-bookmark action-icon"></i> Consultar
             </button></a>
             <a href="login.php"><button class="action-btn">
                 <i class="bi bi-pencil-square action-icon"></i> Login
             </button></a>
-            <a href="navbarLateral.php"><button class="action-btn">
+            <a href="estoque.php"><button class="action-btn">
                 <i class="bi bi-download action-icon"></i> Remover
             </button></a>
         </main>

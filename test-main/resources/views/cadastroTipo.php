@@ -1,9 +1,13 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Produtos</title>
+    <title>Cadastro de Tipo</title>
+    <link rel="icon" href="../../logo/logo.png" type="image/png">
     <link rel="stylesheet" href="../cadastro_produto/style_cadastr.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -22,11 +26,33 @@
             </aside>            
             <main class="content col-12 col-md-10">
                 <div class="page-header">
-                    <h1>Cadastro de Tipos</h1>
-                    <p>Preencha o formulário abaixo para cadastrar o tipo!</p>
+                    <div class="d-flex align-items-center gap-3 mb-2">
+                        <a href="javascript:history.back()" 
+                        class="btn text-white d-inline-flex align-items-center justify-content-center cursor-pointer" 
+                        style="width: 40px; height: 40px; border-radius: 50%; background-color: #6f42c1; border: none; transition: background-color 0.2s;"
+                        onmouseover="this.style.backgroundColor='#5a32a3'"
+                        onmouseout="this.style.backgroundColor='#6f42c1'">
+                            <i class="bi bi-arrow-left" style="font-size: 1.25rem; line-height: 1;"></i>
+                        </a>
+                        <h1 class="m-0">Cadastro de Tipos</h1>
+                    </div>
+                    <p class="text-muted m-0" style="padding-left: 52px;">Preencha o formulário abaixo para cadastrar o tipo!</p>
                 </div>
 
-                <form action="../../app/Controller/cadastros/cadastro_tipo.php" method="POST" class="form-container">
+            <?php if(isset($_GET['sucesso'])) { ?>
+                <div class="alert alert-success">
+                    Tipo cadastrado com sucesso!
+                </div>
+                    <?php } ?>
+
+                    <?php if(isset($_GET['erro'])) { ?>
+                        <div class="alert alert-danger">
+                            Erro ao cadastrar tipo.
+                        </div>
+            <?php } ?>
+
+                <form action="../Controller/controllerTipo.php" method="POST" class="form-container">
+                    <input type="hidden" name="acao" value="Salvar">
                     <div class="form-section">
                         <div class="form-row">
                             <div class="form-group">
@@ -45,5 +71,7 @@
     </div>
 
     <script src="../js/cadastro_produto.js"></script>
+
+    
 </body>
 </html>

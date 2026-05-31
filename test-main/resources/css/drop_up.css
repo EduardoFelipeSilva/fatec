@@ -112,6 +112,12 @@
     flex-direction: column;
 }
 
+/* Garante que links dentro do menu herdem a cor e não tenham sublinhado */
+.menu-items a.menu-item {
+    text-decoration: none;
+    color: inherit;
+}
+
 .menu-item {
     display: flex;
     align-items: center;

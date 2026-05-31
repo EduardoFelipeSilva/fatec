@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Ajuda - Recriação</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="../../logo/logo.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -25,8 +26,8 @@
                 <div class="icon-placeholder">📞</div>
             </div>
             <div class="card-body-content">
-                <h3>Contact us</h3>
-                <p>Lorem ipsum dolor sit dim amet, mea regione diamet principes at. Cum no movi lorem ipsum dolor sit dim.</p>
+                <h3>Contate-nos</h3>
+                <p>Aqui você pode descrever um problema e receber ajuda para resolvê-lo com facilidade.</p>
             </div>
 
             <div class="pagination-dots">
@@ -43,8 +44,8 @@
             </div>
 
             <div class="card-body-content">
-                <h3>Describe issue</h3>
-                <p>Lorem ipsum dolor sit dim amet, mea regione diamet principes at. Cum no movi lorem ipsum dolor sit dim.</p>
+                <h3>Descreva o problema</h3>
+                <p>Descreva claramente o problema encontrado, incluindo etapas, erros e detalhes para agilizar a solução.</p>
             </div>
 
             <div class="pagination-dots">
@@ -60,8 +61,8 @@
                 <div class="icon-placeholder">🛠️</div>
             </div>
             <div class="card-body-content">
-                <h3>Get help</h3>
-                <p>Lorem ipsum dolor sit dim amet, mea regione diamet principes at. Cum no movi lorem ipsum dolor sit dim.</p>
+                <h3>Obtenha ajuda</h3>
+                <p>Nossa equipe recebe sua solicitação e fornece orientações passo a passo para resolver o que for necessário.</p>
             </div>
             <div class="pagination-dots">
                 <span class="dot"></span>
@@ -76,9 +77,9 @@
                 <div class="icon-placeholder">✔️</div>
             </div>
             <div class="card-body-content">
-                <h3>Done!<br><small class="text-muted" style="font-size: 0.8em;">Issue is resolved</small></h3>
-                <p>Lorem ipsum dolor sit dim amet, mea regione diamet principes at.</p>
-                <a href="#" class="btn-learn-more">Learn more</a>
+                <h3>Feito!<br><small class="text-muted" style="font-size: 0.8em;">Problemas Resolvidos</small></h3>
+                <p>Seu problema foi registrado e encaminhado. Estamos trabalhando para garantir que tudo funcione corretamente.</p>
+                <a href="#" class="btn-learn-more">Saiba mais</a>
             </div>
             <div class="pagination-dots">
                 <span class="dot"></span>

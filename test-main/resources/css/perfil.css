@@ -1,14 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
 /* Layout Global */
 .main-wrapper {
     display: flex;
     min-height: 100vh;
-    width: 100%;
+    /* width: 100%; */
 }
 
 /* Sidebar Ajustes */
 .sidebar {
     width: 300px; /* Largura fixa para a sidebar */
-    min-width: 300px;
+    /* min-width: 300px; */
     background-color: #fff;
     border-right: 1px solid #dee2e6;
     padding-top: 20px;
@@ -16,16 +23,18 @@
     top: 0;
     height: 100vh;
     padding: 10px 15px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
 }
 
 /* Área do Conteúdo (onde fica o perfil) */
-.content-area {
-    flex-grow: 1; /* Ocupa o resto do espaço */
+.content {
+    flex-grow: 1;
     background-color: #f8f9fa;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 2rem;
+    transition: margin 0.3s ease;
 }
 
 /* Ajuste no Input Group para não conflitar com classes do Bootstrap */
@@ -100,7 +109,6 @@
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    background: #eee;
 }
 
 .edit-icon {
@@ -137,31 +145,25 @@ hr {
 }
 
 /* Inputs */
-.input-group {
+.input-group-custom {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee
 }
 
-.input-group label {
-    font-size: 0.95rem;
-    color: #444;
-    flex: 1;
-}
+.input-group-custom label { font-weight: 500; color: #555; }
 
-.input-group input, .input-group textarea {
-    flex: 1.5;
-    padding: 8px;
+.input-group-custom input, .input-group-custom textarea {
     border: none;
-    border-bottom: 1px solid transparent;
     text-align: right;
-    color: #666;
+    padding: 8px;
     outline: none;
-    transition: 0.3s;
+    width: 60%;
+    background: transparent;
 }
 
-.input-group input:focus {
+.input-group-custom input:focus {
     border-bottom-color: #6f42c1;
     color: #000;
 }
@@ -181,4 +183,41 @@ hr {
 
 .save-btn:hover {
     background-color: #5900ff;
+}
+
+/* --- RESPONSIVIDADE --- */
+
+/* Desktop */
+@media (min-width: 768px) {
+    .content {
+        margin-left: 250px; /* Largura da sua sidebar fixa */
+    }
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    
+    .content {
+        margin-left: 0;
+        padding: 15px;
+        align-items: flex-start; /* No mobile fica melhor no topo */
+        padding-top: 50px;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .input-group-custom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .input-group-custom input {
+        width: 100%;
+        text-align: left;
+    }
 }

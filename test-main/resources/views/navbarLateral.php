@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +16,12 @@
                 <h4 class="px-3">Dashboard <small class="text-muted"></small></h4>
                 <a href="index.php"><i class="bi bi-house-door action-icon"></i>Home</a>
                 <a href="#"><i class="bi bi-speedometer2 action-icon"></i>Dashboard</a>
+                <a href="estoque.php"><i class="bi bi-box-seam action-icon"></i>Estoque</a>
                 <a href="produtos.php"><i class="bi bi-person-plus action-icon"></i>Produtos</a>
                 <a href="vendas.php"><i class="bi bi-cart action-icon"></i>Vendas</a>
-                <a href="editar.php"><i class="bi bi-pencil-square action-icon"></i>Editar</a>
+                <a href="editar.php"><i class="bi bi-pencil-square action-icon"></i>Gerenciar</a>
                 <a href="ajuda.php"><i class="bi bi-question-circle action-icon"></i>Ajuda</a>
+                
             </div>
 
             <!-- Adição do Drop-up do mini perfil de usuário -->
