@@ -1,10 +1,10 @@
 <?php
 session_start();
+require_once '../model/Usuario.php';
+require_once '../dao/UsuarioDao.php';
 
 echo "Controller Usuario";
 
-// require_once '../model/Usuario.php';
-// require_once '../dao/UsuarioDao.php';
 
 
 
