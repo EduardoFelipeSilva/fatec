@@ -150,6 +150,44 @@ background: #ffffff;
     margin-bottom: 10px;
 }
 
+html.dark-theme .content-area,
+html.dark-theme .help-container,
+html.dark-theme .help-card,
+html.dark-theme .icon-placeholder {
+    background-color: #111827 !important;
+    color: #e2e8f0 !important;
+    border-color: #334155 !important;
+}
+
+html.dark-theme .help-card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+html.dark-theme .card-body-content p,
+html.dark-theme .help-card h3,
+html.dark-theme .dot,
+html.dark-theme .dot.active,
+html.dark-theme .help-card a {
+    color: #e2e8f0 !important;
+}
+
+html.dark-theme .help-card p {
+    color: #cbd5e1 !important;
+}
+
+html.dark-theme .help-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.55);
+}
+
+html.dark-theme .dot {
+    background-color: #334155 !important;
+}
+
+html.dark-theme .dot.active {
+    background-color: #6366f1 !important;
+}
+
 /* --- DESKTOP (Acima de 768px) --- */
 @media (min-width: 768px) {
     .sidebar {
