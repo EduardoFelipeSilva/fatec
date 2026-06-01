@@ -4,13 +4,14 @@
         public static function conectar()
         {
         //informações do banco de dados
-        $servidor="zephyr.proxy.rlwy.net:57309";
+        $servidor="zephyr.proxy.rlwy.net";
         $banco="railway";
         $usuario="root";
+        $porta = "57309";
         $senha="OegcwTymITDxxJIKHIMfoKbSwXmiFPjS";
 
         // $conexao = new PDO("TIPO_BANCO:host=SERVIDOR;dbname=NOME_BANCO", "USUARIO", "SENHA"); 
-        $conexao = new PDO("mysql:host=$servidor;dbname=$banco", $usuario, $senha); 
+        $conexao = new PDO("mysql:host=$servidor; port=$porta; dbname=$banco", $usuario, $senha); 
                 
         //se acontecer alguma coisa de errado no banco conseguimo ver melhoro erro
         $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
