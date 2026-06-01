@@ -4,7 +4,7 @@
         public static function conectar()
         {
         //informações do banco de dados
-        $servidor="zephyr.proxy.rlwy.net";
+        $servidor="zephyr.proxy.rlwy.net:57309";
         $banco="railway";
         $usuario="root";
         $senha="OegcwTymITDxxJIKHIMfoKbSwXmiFPjS";
