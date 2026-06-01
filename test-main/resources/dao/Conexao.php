@@ -1,24 +1,29 @@
 <?php
-    class Conexao
+class Conexao
+{
+    public static function conectar()
     {
-        public static function conectar()
-        {
-        //informações do banco de dados
-        $servidor="zephyr.proxy.rlwy.net";
-        $banco="railway";
-        $usuario="root";
+        $servidor = "zephyr.proxy.rlwy.net";
         $porta = "57309";
-        $senha="OegcwTymITDxxJIKHIMfoKbSwXmiFPjS";
+        $banco = "railway";
+        $usuario = "root";
+        $senha = "OegcwTymITDxxJIKHIMfoKbSwXmiFPjS";
 
-        // $conexao = new PDO("TIPO_BANCO:host=SERVIDOR;dbname=NOME_BANCO", "USUARIO", "SENHA"); 
-        $conexao = new PDO("mysql:host=$servidor; port=$porta; dbname=$banco", $usuario, $senha); 
-                
-        //se acontecer alguma coisa de errado no banco conseguimo ver melhoro erro
-        $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $conexao->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-            
-        return $conexao;
+        try {
+            $conexao = new PDO(
+                "mysql:host=$servidor;port=$porta;dbname=$banco;charset=utf8",
+                $usuario,
+                $senha
+            );
+
+            $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $conexao->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+            return $conexao;
+
+        } catch (PDOException $e) {
+            die("Erro na conexão: " . $e->getMessage());
         }
     }
-
+}
 ?>
