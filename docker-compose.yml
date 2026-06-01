@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./test-main:/var/www/html
+    environment:
+      - DB_HOST=zephyr.proxy.rlwy.net
+      - DB_PORT=57309
+      - DB_NAME=railway
+      - DB_USER=root
+      - DB_PASSWORD=OegcwTymITDxxJIKHIMfoKbSwXmiFPjS
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

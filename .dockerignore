@@ -1,0 +1,8 @@
+.git
+.gitignore
+.env.local
+.vscode
+node_modules
+*.log
+.DS_Store
+test-main/nao esta mais em uso
