@@ -1,3 +1,9 @@
+<?php
+    if(!session_status() == PHP_SESSION_NONE) {
+        Header("Location: login.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
