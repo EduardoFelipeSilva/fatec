@@ -145,8 +145,8 @@ require_once '../dao/UsuarioDao.php';
 
     if ($_POST['acao'] === "Login") {
 
-        $usuario = UsuarioDao::login($_POST['email'], $_POST['senha']);
-        echo json_encode($usuario);
+        // $usuario = UsuarioDao::login($_POST['email'], $_POST['senha']);
+        echo "sucesso";
 
     // if ($usuario) {
 
