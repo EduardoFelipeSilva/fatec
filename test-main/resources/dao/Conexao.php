@@ -4,10 +4,10 @@
         public static function conectar()
         {
         //informações do banco de dados
-        $servidor="localhost";
-        $banco="zenestoque";
+        $servidor="zephyr.proxy.rlwy.net";
+        $banco="railway";
         $usuario="root";
-        $senha="";
+        $senha="OegcwTymITDxxJIKHIMfoKbSwXmiFPjS";
 
         // $conexao = new PDO("TIPO_BANCO:host=SERVIDOR;dbname=NOME_BANCO", "USUARIO", "SENHA"); 
         $conexao = new PDO("mysql:host=$servidor;dbname=$banco", $usuario, $senha); 
