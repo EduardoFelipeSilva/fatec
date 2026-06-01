@@ -10,8 +10,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login e Cadastro</title>
-    <link rel="icon" href="../public/logo/logo.png" type="image/png">
+    <title>Login</title>
+    <link rel="icon" href="../public/Logo/logo.png" type="image/png">
     <script src="../js/login.js"></script>
     <link rel="stylesheet" href="../css/login.css">
 </head>
