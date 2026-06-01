@@ -1,8 +1,9 @@
 <?php
     if(!session_status() == PHP_SESSION_NONE) {
-        Header("Location: login.php");
+        Header("Location: index.php");
     }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
