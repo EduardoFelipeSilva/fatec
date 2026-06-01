@@ -1,6 +1,9 @@
 <?php
 include 'sessao.php';
 
+$id_usuario = $_SESSION['usuario_id'];
+$usuario = UsuarioDao::selectById($id_usuario);
+
 require_once '../dao/UsuarioDao.php';
 
 
@@ -41,7 +44,7 @@ require_once '../dao/UsuarioDao.php';
                 
                 <div class="profile-header">
                     <div class="avatar-wrapper">
-                        <img src="<?= $usuario['foto'] ?>"  alt="Foto de Perfil" id="profile-img">
+                        <img src="../../logo/logo.png"  alt="Foto de Perfil" id="profile-img">
                         <label for="upload-photo" class="edit-icon">✎</label>
                         <input type="file" id="upload-photo" accept="image/*" hidden>
                     </div>

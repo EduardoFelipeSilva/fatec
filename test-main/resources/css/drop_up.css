@@ -468,7 +468,7 @@ html.dark-theme .table-striped > tbody > tr:nth-of-type(odd) {
 }
 
 html.large-font {
-    font-size: 1.05rem !important;
+    font-size: 1.18rem !important;
 }
 
 html.large-font body,
@@ -486,7 +486,14 @@ html.large-font .settings-modal,
 html.large-font .profile-card,
 html.large-font .form-container,
 html.large-font .input-group-custom label,
-html.large-font .form-control {
+html.large-font .form-control,
+html.large-font .table,
+html.large-font .table td,
+html.large-font .table th,
+html.large-font .help-card p,
+html.large-font .input-group-custom input,
+html.large-font .input-group-custom textarea,
+html.large-font .input-group-custom select {
     font-size: 1.05rem !important;
 }
 

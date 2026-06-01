@@ -107,6 +107,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyFontSize(size) {
         const isLarge = size === 'large';
         document.documentElement.classList.toggle('large-font', isLarge);
+        document.body.classList.toggle('large-font', isLarge);
+        if (isLarge) {
+            document.documentElement.style.fontSize = '1.18rem';
+            document.body.style.fontSize = '1.18rem';
+        } else {
+            document.documentElement.style.fontSize = '';
+            document.body.style.fontSize = '';
+        }
         if (fontSizeValue) {
             fontSizeValue.textContent = isLarge ? 'Grande' : 'Normal';
         }
