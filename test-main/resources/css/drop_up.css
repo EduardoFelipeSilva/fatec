@@ -466,23 +466,23 @@ html.dark-theme .table td {
 .table-responsive-wrapper {
     width: 100%;
     display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
     margin-bottom: 1rem;
 }
 
 .table-responsive table,
 .table-responsive-wrapper table {
     width: 100%;
-    min-width: 650px;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 .table-responsive td,
 .table-responsive th,
 .table-responsive-wrapper td,
 .table-responsive-wrapper th {
-    white-space: nowrap;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 html.dark-theme .table-striped > tbody > tr:nth-of-type(odd) {
     background-color: #172434 !important;
