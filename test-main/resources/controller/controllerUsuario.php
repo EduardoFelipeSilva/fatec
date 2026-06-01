@@ -146,22 +146,22 @@ echo "Controller Usuario";
 //     }
 // }
 
-//     if ($_POST['acao'] === "Login") {
+    if ($_POST['acao'] === "Login") {
 
-//         $usuario = UsuarioDao::login($_POST['email'], $_POST['senha']);
+        $usuario = UsuarioDao::login($_POST['email'], $_POST['senha']);
 
-//     if ($usuario) {
+    if ($usuario) {
 
-//         $_SESSION['usuario_id'] = $usuario['id_user'];
-//         $_SESSION['usuario_nome'] = $usuario['nome'];
-//         $_SESSION['usuario_email'] = $usuario['email'];
+        $_SESSION['usuario_id'] = $usuario['id_user'];
+        $_SESSION['usuario_nome'] = $usuario['nome'];
+        $_SESSION['usuario_email'] = $usuario['email'];
 
-//         echo "sucesso";
+        echo "sucesso";
 
-//     } else {
-//         echo "Email ou senha incorretos!";
-//     }
-//     }
+    } else {
+        echo "Email ou senha incorretos!";
+    }
+    }
 
 //     if ($_POST['acao'] === "UpdatePerfil") {
 
