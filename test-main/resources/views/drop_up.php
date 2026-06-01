@@ -23,6 +23,10 @@ $usuario = UsuarioDao::selectById($id_usuario);
         if (savedAppTheme === 'dark') {
             document.documentElement.classList.add('dark-theme');
         }
+        const savedFontSize = localStorage.getItem('appFontSize');
+        if (savedFontSize === 'large') {
+            document.documentElement.classList.add('large-font');
+        }
     </script>
 </head>
 <body>
@@ -95,6 +99,13 @@ $usuario = UsuarioDao::selectById($id_usuario);
                     <div class="setting-value theme-select">
                         <span id="theme-value">Claro</span>
                         <button type="button" class="theme-toggle-btn" id="theme-toggle-btn">Usar Escuro</button>
+                    </div>
+                </div>
+                <div class="settings-item font-item">
+                    <div class="setting-text">Fonte</div>
+                    <div class="setting-value font-select">
+                        <span id="font-size-value">Normal</span>
+                        <button type="button" class="font-toggle-btn" id="font-toggle-btn">Aumentar Fonte</button>
                     </div>
                 </div>
                 <div class="settings-item">

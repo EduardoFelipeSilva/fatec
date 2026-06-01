@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const notificationOptions = document.getElementById('notification-options');
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
     const themeValue = document.getElementById('theme-value');
+    const fontToggleBtn = document.getElementById('font-toggle-btn');
+    const fontSizeValue = document.getElementById('font-size-value');
 
     // if (!trigger || !main) {
     //     console.error("Erro: IDs não encontrados no HTML!");
@@ -102,6 +104,18 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('appTheme', isDark ? 'dark' : 'light');
     }
 
+    function applyFontSize(size) {
+        const isLarge = size === 'large';
+        document.documentElement.classList.toggle('large-font', isLarge);
+        if (fontSizeValue) {
+            fontSizeValue.textContent = isLarge ? 'Grande' : 'Normal';
+        }
+        if (fontToggleBtn) {
+            fontToggleBtn.textContent = isLarge ? 'Fonte Normal' : 'Aumentar Fonte';
+        }
+        localStorage.setItem('appFontSize', isLarge ? 'large' : 'normal');
+    }
+
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
             const currentTheme = document.documentElement.classList.contains('dark-theme') ? 'dark' : 'light';
@@ -109,8 +123,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    if (fontToggleBtn) {
+        fontToggleBtn.addEventListener('click', () => {
+            const currentSize = document.documentElement.classList.contains('large-font') ? 'large' : 'normal';
+            applyFontSize(currentSize === 'large' ? 'normal' : 'large');
+        });
+    }
+
     const savedTheme = localStorage.getItem('appTheme') || 'light';
     applyTheme(savedTheme);
+    const savedFontSize = localStorage.getItem('appFontSize') || 'normal';
+    applyFontSize(savedFontSize);
 
 
 

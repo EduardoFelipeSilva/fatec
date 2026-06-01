@@ -467,6 +467,35 @@ html.dark-theme .table-striped > tbody > tr:nth-of-type(odd) {
     background-color: #172434 !important;
 }
 
+html.large-font {
+    font-size: 1.05rem !important;
+}
+
+html.large-font body,
+html.large-font .sidebar,
+html.large-font .content,
+html.large-font .main-content,
+html.large-font .sales-table,
+html.large-font .sales-table th,
+html.large-font .sales-table td,
+html.large-font .form-group label,
+html.large-font .page-header h1,
+html.large-font .page-header p,
+html.large-font .help-card h3,
+html.large-font .settings-modal,
+html.large-font .profile-card,
+html.large-font .form-container,
+html.large-font .input-group-custom label,
+html.large-font .form-control {
+    font-size: 1.05rem !important;
+}
+
+html.large-font .btn,
+html.large-font .theme-toggle-btn,
+html.large-font .font-toggle-btn {
+    font-size: 1rem !important;
+}
+
 html.dark-theme .sales-table,
 html.dark-theme .sales-table th,
 html.dark-theme .sales-table td,
