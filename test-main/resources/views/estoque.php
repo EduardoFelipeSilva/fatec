@@ -151,7 +151,7 @@ $totalPaginas = ceil($totalEstoques / $limite);
 
             <div class="table-responsive">
 
-                <table class="table align-middle">
+                <table class="table align-middle estoque-table">
 
                     <thead>
                         <tr>

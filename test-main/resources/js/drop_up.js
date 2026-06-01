@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Funcionalidade para o menu de notificação (do exemplo anterior)
     const notificationToggle = document.getElementById('notification-toggle');
     const notificationOptions = document.getElementById('notification-options');
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const themeValue = document.getElementById('theme-value');
 
     // if (!trigger || !main) {
     //     console.error("Erro: IDs não encontrados no HTML!");
@@ -87,6 +89,28 @@ document.addEventListener('DOMContentLoaded', () => {
             notificationOptions.classList.remove('drop-up');
         });
     });
+
+    function applyTheme(theme) {
+        const isDark = theme === 'dark';
+        document.documentElement.classList.toggle('dark-theme', isDark);
+        if (themeValue) {
+            themeValue.textContent = isDark ? 'Escuro' : 'Claro';
+        }
+        if (themeToggleBtn) {
+            themeToggleBtn.textContent = isDark ? 'Usar Claro' : 'Usar Escuro';
+        }
+        localStorage.setItem('appTheme', isDark ? 'dark' : 'light');
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.classList.contains('dark-theme') ? 'dark' : 'light';
+            applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+    }
+
+    const savedTheme = localStorage.getItem('appTheme') || 'light';
+    applyTheme(savedTheme);
 
 
 

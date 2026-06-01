@@ -18,6 +18,12 @@ $usuario = UsuarioDao::selectById($id_usuario);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        const savedAppTheme = localStorage.getItem('appTheme');
+        if (savedAppTheme === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+        }
+    </script>
 </head>
 <body>
 
@@ -84,20 +90,21 @@ $usuario = UsuarioDao::selectById($id_usuario);
                     <i class='bx bx-x close-btn' id="close-settings"></i>
                 </div>
                 <hr>
-                <div class="settings-item">
+                <div class="settings-item theme-item">
                     <div class="setting-text">Tema</div>
-                    <div class="setting-value"><span>Claro</span>
+                    <div class="setting-value theme-select">
+                        <span id="theme-value">Claro</span>
+                        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn">Usar Escuro</button>
+                    </div>
+                </div>
+                <div class="settings-item">
+                    <div class="setting-text">Idioma</div>
+                    <div class="setting-value">
+                        <span>PT-BR</span>
                         <i class='bx bx-chevron-down'></i>
+                    </div>
                 </div>
             </div>
-            <div class="settings-item">
-                <div class="setting-text">Idioma</div>
-                <div class="setting-value">
-                    <span>PT-BR</span>
-                    <i class='bx bx-chevron-down'></i>
-                </div>
-            </div>
-        </div>
     </div>
     </div>
 
