@@ -462,7 +462,28 @@ html.dark-theme .table td {
     color: #e2e8f0 !important;
     border-color: #334155 !important;
 }
+.table-responsive,
+.table-responsive-wrapper {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+}
 
+.table-responsive table,
+.table-responsive-wrapper table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+}
+
+.table-responsive td,
+.table-responsive th,
+.table-responsive-wrapper td,
+.table-responsive-wrapper th {
+    white-space: nowrap;
+}
 html.dark-theme .table-striped > tbody > tr:nth-of-type(odd) {
     background-color: #172434 !important;
 }

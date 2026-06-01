@@ -11,14 +11,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login e Cadastro</title>
-    <link rel="icon" href="../../logo/logo.png" type="image/png">
+    <link rel="icon" href="../public/logo/logo.png" type="image/png">
     <script src="../js/login.js"></script>
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
 
 <div class="container">
-    <h2 id="form-titulo">Login / Cadastro</h2>
+    <h2 id="form-titulo">Login</h2>
 
     <div id="mensagem" class="mensagem"></div>
 
@@ -61,3 +61,4 @@
 
 </body>
 </html>
+
