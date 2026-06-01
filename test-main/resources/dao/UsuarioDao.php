@@ -4,7 +4,7 @@
     class UsuarioDao{
         public static function insert($usuario){
             $conexao = Conexao::conectar();
-            $query = "INSERT INTO users (nome, cpf, email, senha, telefone, endereco, cargo, nivel_Acesso, foto, id_status) VALUES (?,?,?,?,?,?,?,?,?,?)";
+            $query = "INSERT INTO users (nome, cpf, email, senha, telefone, endereco, cargo, nivel_acesso, foto, id_status) VALUES (?,?,?,?,?,?,?,?,?,?)";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $usuario->getNome());
             $stmt->bindValue(2, $usuario->getCpf());
@@ -29,7 +29,7 @@
                     
         public static function selectById($id){
             $conexao = Conexao::conectar();
-            $query = "SELECT * FROM users WHERE id_User = ?";
+            $query = "SELECT * FROM users WHERE id_user = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $id);
             $stmt->execute();
@@ -39,7 +39,7 @@
 
         public static function delete($id){
             $conexao = Conexao::conectar();
-            $query = "DELETE FROM users WHERE id_User = ?";
+            $query = "DELETE FROM users WHERE id_user = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $id);
             return  $stmt->execute();
@@ -55,9 +55,9 @@
             senha = ?, 
             telefone = ?, 
             cargo = ?, 
-            nivelAcesso = ?, 
+            nivel_acesso = ?, 
             foto = ?
-            WHERE id_User = ?";
+            WHERE id_user = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $User->getNome());
             $stmt->bindValue(2, $User->getCpf());
@@ -79,7 +79,7 @@
             email = ?, 
             telefone = ?,
             foto = ?
-            WHERE id_User = ?";
+            WHERE id_user = ?";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $usuario->getNome());
             $stmt->bindValue(2, $usuario->getEmail());

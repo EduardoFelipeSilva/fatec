@@ -51,10 +51,10 @@ require_once '../dao/UsuarioDao.php';
         $usuario->setSenha($_POST['senha']);
         $usuario->setTelefone($_POST['telefone']);
         $usuario->setEndereco($_POST['endereco']);
-        $usuario->setCargo($_POST['cargo']);
-        $usuario->setNivelAcesso($_POST[1]);
-        $usuario->setFoto($_POST['foto']);
-        $usuario->setStatus($_POST[2]);
+        $usuario->setCargo($_POST['cargo'] ?? null);
+        $usuario->setNivelAcesso($_POST['nivel_acesso'] ?? null);
+        $usuario->setFoto($_POST['foto'] ?? null);
+        $usuario->setStatus($_POST['id_status'] ?? $_POST['status'] ?? null);
 
         try {
 
@@ -125,10 +125,10 @@ require_once '../dao/UsuarioDao.php';
         $usuario->setSenha($_POST['senha']);
         $usuario->setTelefone($_POST['telefone']);
         $usuario->setEndereco($_POST['endereco']);
-        $usuario->setCargo($_POST['cargo']);
-        $usuario->setNivelAcesso($_POST[1]);
-        $usuario->setFoto($_POST['foto']);
-        $usuario->setStatus($_POST[2]);
+        $usuario->setCargo($_POST['cargo'] ?? null);
+        $usuario->setNivelAcesso($_POST['nivel_acesso'] ?? null);
+        $usuario->setFoto($_POST['foto'] ?? null);
+       $usuario->setStatus($_POST[2]);
 
         try {
 
@@ -145,20 +145,19 @@ require_once '../dao/UsuarioDao.php';
 
     if ($_POST['acao'] === "Login") {
 
-        // $usuario = UsuarioDao::login($_POST['email'], $_POST['senha']);
+        $usuario = UsuarioDao::login($_POST['email'], $_POST['senha']);
+
+    if ($usuario) {
+
+        $_SESSION['usuario_id'] = $usuario['id_user'];
+        $_SESSION['usuario_nome'] = $usuario['nome'];
+        $_SESSION['usuario_email'] = $usuario['email'];
+
         echo "sucesso";
 
-    // if ($usuario) {
-
-    //     $_SESSION['usuario_id'] = $usuario['id_user'];
-    //     $_SESSION['usuario_nome'] = $usuario['nome'];
-    //     $_SESSION['usuario_email'] = $usuario['email'];
-
-    //     echo "sucesso";
-
-    // } else {
-    //     echo "Email ou senha incorretos!";
-    // }
+    } else {
+        echo "Email ou senha incorretos!";
+    }
     }
 
     if ($_POST['acao'] === "UpdatePerfil") {
