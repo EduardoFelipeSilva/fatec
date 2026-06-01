@@ -44,7 +44,7 @@ require_once '../dao/UsuarioDao.php';
                 
                 <div class="profile-header">
                     <div class="avatar-wrapper">
-                        <img src="../../logo/logo.png"  alt="Foto de Perfil" id="profile-img">
+                        <img src="../public/Logo/logo.png"  alt="Foto de Perfil" id="profile-img">
                         <label for="upload-photo" class="edit-icon">✎</label>
                         <input type="file" id="upload-photo" accept="image/*" hidden>
                     </div>

@@ -33,7 +33,7 @@ $usuario = UsuarioDao::selectById($id_usuario);
 
     <div class="trigger" id="trigger-profile">
         <div class="profile-trigger-area">
-            <img src="../../logo/logo.png" class="rounded-circle" alt="User" width="60">
+            <img src="../public/Logo/logo.png" class="rounded-circle" alt="User" width="60">
             <p class="mt-2 mb-0"><?= $usuario['nome'] ?></p>
             <small class="text-muted"><?= $usuario['cargo'] ?></small>
         </div>
@@ -42,7 +42,7 @@ $usuario = UsuarioDao::selectById($id_usuario);
             <div class="profile-container" id="profile-container">
                 <div class="profile-header">
                     <div class="profile-avatar-wrapper">
-                        <img src="../../logo/logo.png" alt="Foto de Perfil" class="profile-avatar">
+                        <img src="../public/Logo/logo.png" alt="Foto de Perfil" class="profile-avatar">
                     </div>
                     <div class="profile-info">
                         <h3 class="profile-name"><?= $usuario['nome'] ?></h3>
