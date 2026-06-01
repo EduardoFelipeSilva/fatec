@@ -14,7 +14,7 @@
             $stmt->bindValue(6, $usuario->getEndereco());
             $stmt->bindValue(7, $usuario->getCargo());
             $stmt->bindValue(8, $usuario->getNivelAcesso());
-            $stmt->bindValue(9, $usuario->getfoto());
+            $stmt->bindValue(9, $usuario->getFoto());
             $stmt->bindValue(10, $usuario->getStatus());
             $stmt->execute();
         }
@@ -67,7 +67,7 @@
             $stmt->bindValue(6, $User->getTelefone());
             $stmt->bindValue(7, $User->getCargo());
             $stmt->bindValue(8, $User->getNivelAcesso());
-            $stmt->bindValue(9, $User->getfoto());
+            $stmt->bindValue(9, $User->getFoto());
             $stmt->bindValue(10, $User->getId());
             return $stmt->execute();
         }
@@ -84,7 +84,7 @@
             $stmt->bindValue(1, $usuario->getNome());
             $stmt->bindValue(2, $usuario->getEmail());
             $stmt->bindValue(3, $usuario->getTelefone());
-            $stmt->bindValue(4, $usuario->getfoto());
+            $stmt->bindValue(4, $usuario->getFoto());
             $stmt->bindValue(5, $usuario->getId());
             return $stmt->execute();
         }
