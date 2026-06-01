@@ -11,7 +11,7 @@ RUN docker-php-ext-install pdo pdo_mysql mysqli
 RUN a2enmod rewrite
 
 # Copy project files
-COPY ./test-main /var/www/html
+COPY test-main /var/www/html
 
 # Set proper permissions
 RUN chown -R www-data:www-data /var/www/html && \
