@@ -149,6 +149,7 @@ echo "Controller Usuario";
     if ($_POST['acao'] === "Login") {
 
         $usuario = UsuarioDao::login($_POST['email'], $_POST['senha']);
+        
 
     if ($usuario) {
 
@@ -158,7 +159,7 @@ echo "Controller Usuario";
 
         echo "sucesso";
 
-    } else {
+    } else { 
         echo "Email ou senha incorretos!";
     }
     }

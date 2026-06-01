@@ -90,14 +90,18 @@
         // }
         public static function login($email, $senha)
         {
+            echo "entrou no login";
             $conexao = Conexao::conectar();
+            echo "conexao estabelecida";
 
             $query = "SELECT * FROM users WHERE email = ? AND senha = ? LIMIT 1";
-
+            echo "query executada";
             $stmt = $conexao->prepare($query);
             $stmt->bindValue(1, $email);
             $stmt->bindValue(2, $senha);
             $stmt->execute();
+            
+            echo "Login executado";
 
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
