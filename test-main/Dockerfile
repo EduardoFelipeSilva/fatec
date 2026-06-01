@@ -1,28 +1,23 @@
-# Use official PHP image with Apache
 FROM php:8.2-apache
 
-# Set working directory
 WORKDIR /var/www/html
 
-# Install required PHP extensions
 RUN docker-php-ext-install pdo pdo_mysql mysqli
 
-# Disable conflicting MPMs and enable only one
-RUN a2dismod mpm_event mpm_worker mpm_itk 2>/dev/null || true
-RUN a2enmod mpm_prefork
+RUN rm -f /etc/apache2/mods-enabled/mpm_event.load \
+    /etc/apache2/mods-enabled/mpm_event.conf \
+    /etc/apache2/mods-enabled/mpm_worker.load \
+    /etc/apache2/mods-enabled/mpm_worker.conf \
+    /etc/apache2/mods-enabled/mpm_prefork.load \
+    /etc/apache2/mods-enabled/mpm_prefork.conf
 
-# Enable Apache mod_rewrite
-RUN a2enmod rewrite
+RUN a2enmod mpm_prefork rewrite
 
-# Copy project files
 COPY . /var/www/html
 
-# Set proper permissions
 RUN chown -R www-data:www-data /var/www/html && \
     chmod -R 755 /var/www/html
 
-# Expose port 80
 EXPOSE 80
 
-# Start Apache
 CMD ["apache2-foreground"]
