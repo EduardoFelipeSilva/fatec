@@ -1,6 +1,6 @@
 <?php
 
-
+include 'sessao.php';
 require_once '../dao/EstoqueDao.php';
 require_once "../dao/PeriodoDao.php";
 

@@ -1,5 +1,5 @@
 <?php
-
+include 'sessao.php';
 require_once "../dao/TipoDao.php";
 $tipo = TipoDao::selectById($_POST['id']);
 ?>

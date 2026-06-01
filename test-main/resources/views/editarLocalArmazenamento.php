@@ -1,5 +1,5 @@
 <?php
-
+include 'sessao.php';
 require_once "../dao/ArmazenamentoDao.php";
 $local = ArmazenamentoDao::selectById($_POST['id']);
 ?>

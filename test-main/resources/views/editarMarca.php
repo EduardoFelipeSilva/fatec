@@ -1,5 +1,5 @@
 <?php
-
+include 'sessao.php';
 require_once "../dao/MarcaDao.php";
 $marca = MarcaDao::selectById($_POST['id']);
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-
+include 'sessao.php';
 require_once '../dao/TipoDao.php';
 
 $limite = 10;

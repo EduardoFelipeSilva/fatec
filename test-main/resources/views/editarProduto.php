@@ -1,5 +1,5 @@
 <?php
-
+include 'sessao.php';
 require_once "../dao/CategoriaDao.php";
 require_once "../dao/TipoDao.php";
 require_once "../dao/MarcaDao.php";

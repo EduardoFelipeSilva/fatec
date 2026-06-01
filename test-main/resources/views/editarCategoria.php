@@ -1,6 +1,6 @@
 <?php
 
-
+include 'sessao.php';
 require_once "../dao/CategoriaDao.php";
 $categoria = CategoriaDao::selectById($_POST['id']);
 
