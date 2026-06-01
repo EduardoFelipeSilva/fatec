@@ -3,7 +3,9 @@ session_start();
 
 
 require_once '../model/Usuario.php';
-require_once '../dao/UsuarioDao.php';
+require_once 'UsuarioDao.php';
+
+
 
     if ($_POST['acao'] === "Salvar") {
 
