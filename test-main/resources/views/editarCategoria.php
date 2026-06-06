@@ -54,7 +54,7 @@ $categoria = CategoriaDao::selectById($_POST['id']);
                             </div>
                 <?php } ?>
 
-                <form action="../Controller/controllerCategoria.php" method="POST" class="form-container">
+                <form action="../controller/controllerCategoria.php" method="POST" class="form-container">
                     <input type="hidden" name="acao" value="Update">
                     <input type="hidden" name="id" value="<?= $categoria['id_categoria'] ?>">
                     <div class="form-section">

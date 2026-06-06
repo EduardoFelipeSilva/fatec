@@ -83,11 +83,11 @@
             </div>
             <div class="col-6">
                 <label for="cpf" class="form-label">CPF</label>
-                <input type="text" id="cpf" name="cpf" class="form-control" placeholder="000.000.000-00" required>
+                <input type="text" id="cpf" name="cpf" class="form-control" placeholder="000.000.000-00" maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
             </div>
             <div class="col-6">
                 <label for="telefone" class="form-label">Telefone</label>
-                <input type="text" id="telefone" name="telefone" class="form-control" placeholder="(00) 00000-0000" required>
+                <input type="text" id="telefone" name="telefone" class="form-control" placeholder="(00) 00000-0000" maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
             </div>
             <div class="col-6">
                 <label for="cargo" class="form-label">Cargo</label>
@@ -97,16 +97,16 @@
                 <label for="email" class="form-label">E-mail</label>
                 <input type="email" id="email" name="email" class="form-control" placeholder="E-mail" required>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <label for="endereco" class="form-label">Endereço</label>
                 <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Cidade / Estado" required>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <label for="senha" class="form-label">Senha</label>
-                <input type="password" id="senha" name="senha" class="form-control" placeholder="Mínimo 6 caracteres" required>
+                <input type="password" id="senha" name="senha" class="form-control" placeholder="Mínimo 8 caracteres" required>
             </div>
             <input type="hidden" id="foto" name="foto" value="">
-            <div class="col-12 d-grid gap-1 mt-2">
+            <div class="col-12 d-grid gap-1 mt-1">
                 <button type="submit" id="btn-cadastro" class="btn btn-purple py-1 fw-bold">Cadastrar</button>
                 <button type="button" id="btn-voltar" class="btn btn-link text-decoration-none text-muted py-0 small">Voltar ao Login</button>
             </div>

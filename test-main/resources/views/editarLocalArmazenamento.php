@@ -58,7 +58,7 @@ $local = ArmazenamentoDao::selectById($_POST['id']);
                         </div>
             <?php } ?>
 
-                <form action="../Controller/controllerArmazenamento.php" method="POST" class="form-container">
+                <form action="../controller/controllerArmazenamento.php" method="POST" class="form-container">
                     <input type="hidden" name="acao" value="Update">
                     <input type="hidden" name="id" value="<?= $local['id_armazenamento'] ?>">
                     <div class="form-section">

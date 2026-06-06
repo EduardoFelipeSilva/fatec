@@ -65,7 +65,7 @@ $armazenamentos = ArmazenamentoDao::selectAll();
                         </div>
             <?php } ?>
 
-                <form action="../Controller/controllerEstoque.php" method="POST" class="form-container">
+                <form action="../controller/controllerEstoque.php" method="POST" class="form-container">
                     <input type="hidden" name="acao" value="Salvar">
                     <div class="form-section">
                         <div class="form-row">

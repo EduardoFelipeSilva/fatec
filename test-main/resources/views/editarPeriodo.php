@@ -54,7 +54,7 @@ $periodo = PeriodoDao::selectById($_POST['id']);
                             </div>
                 <?php } ?>
 
-                <form action="../Controller/controllerPeriodo.php" method="POST" class="form-container">
+                <form action="../controller/controllerPeriodo.php" method="POST" class="form-container">
                     <input type="hidden" name="acao" value="Update">
                     <input type="hidden" name="id" value="<?= $periodo['id_periodo'] ?>">
                     <div class="form-section">

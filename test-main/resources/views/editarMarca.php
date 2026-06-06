@@ -54,7 +54,7 @@ $marca = MarcaDao::selectById($_POST['id']);
                         </div>
             <?php } ?>
 
-                <form action="../Controller/controllerMarca.php" method="POST" class="form-container">
+                <form action="../controller/controllerMarca.php" method="POST" class="form-container">
                     <input type="hidden" name="acao" value="Update">
                     <input type="hidden" name="id" value="<?= $marca['id_marca'] ?>">
                     <div class="form-section">
