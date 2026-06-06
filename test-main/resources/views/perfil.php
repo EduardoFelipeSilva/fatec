@@ -58,7 +58,7 @@ require_once '../dao/UsuarioDao.php';
                 <hr>
 
 
-                <form id="profile-form" action="../Controller/controllerUsuario.php" method="POST" enctype="multipart/form-data">
+                <form id="profile-form" action="../controller/controllerUsuario.php" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="acao" value="UpdatePerfil">
                     <input type="hidden" name="id" value="<?= $usuario['id_user'] ?> ">
                     <div class="input-group-custom">
