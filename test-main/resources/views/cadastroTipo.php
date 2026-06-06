@@ -49,7 +49,7 @@
                         </div>
             <?php } ?>
 
-                <form action="../Controller/controllerTipo.php" method="POST" class="form-container">
+                <form action="../controller/controllerTipo.php" method="POST" class="form-container">
                     <input type="hidden" name="acao" value="Salvar">
                     <div class="form-section">
                         <div class="form-row">

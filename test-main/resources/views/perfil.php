@@ -1,8 +1,7 @@
 <?php
 include 'sessao.php';
 
-$id_usuario = $_SESSION['usuario_id'];
-$usuario = UsuarioDao::selectById($id_usuario);
+
 
 require_once '../dao/UsuarioDao.php';
 

@@ -473,7 +473,7 @@ html.dark-theme .table td {
 .table-responsive-wrapper table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
+    table-layout: auto;
 }
 
 .table-responsive td,
@@ -599,4 +599,3 @@ html.dark-theme .page-header h1,
 html.dark-theme .main-header h1 {
     color: #f8fafc !important;
 }
-

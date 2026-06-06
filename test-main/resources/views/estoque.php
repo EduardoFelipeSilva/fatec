@@ -157,7 +157,7 @@ $totalPaginas = ceil($totalEstoques / $limite);
                         <tr>
                             <th>ID</th>
                             <th>Produto</th>
-                            <th>Armazenamento</th>
+                            <th class="text-nowrap">Armazenamento</th>
                             <th>Quantidade</th>
                             <th>Status</th>
                             <th>Adicionar</th>
@@ -180,7 +180,7 @@ $totalPaginas = ceil($totalEstoques / $limite);
                                     <?= htmlspecialchars($estoque['produto_nome']) ?>
                                 </td>
 
-                                <td>
+                                <td class="text-nowrap">
                                     <?= htmlspecialchars($estoque['armazenamento_nome']) ?>
                                 </td>
 

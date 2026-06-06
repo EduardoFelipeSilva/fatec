@@ -29,9 +29,7 @@
             <a href="vendas.php"><button class="action-btn">
                 <i class="bi bi-bookmark action-icon"></i> Consultar
             </button></a>
-            <a href="login.php"><button class="action-btn">
-                <i class="bi bi-pencil-square action-icon"></i> Login
-            </button></a>
+
             <a href="estoque.php"><button class="action-btn">
                 <i class="bi bi-download action-icon"></i> Remover
             </button></a>
